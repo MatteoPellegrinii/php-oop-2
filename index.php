@@ -57,7 +57,7 @@ class User{
     }
 
     function check($scadenza_carta_credito){
-        if (strtotime(date("d-m-y"))  >= $scadenza_carta_credito) {
+        if (strtotime(date("d-m-y"))  >= strtotime($scadenza_carta_credito) ) {
             $this->cartavalida = false;
         } else {
             $this->cartavalida = true;
