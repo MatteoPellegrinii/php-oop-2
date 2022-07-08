@@ -48,7 +48,7 @@ class User{
 
     function sconticino($tipologia_user){
         if ($tipologia_user === true) {
-            $this->sconto = true;
+            $this->sconto = '20%';
         } else  {
             $this->sconto = false;
             $this->cartavalida = false;
@@ -57,7 +57,7 @@ class User{
     }
 
     function check($scadenza_carta_credito){
-        if (strtotime(date("d-m-y"))  >= strtotime($scadenza_carta_credito) ) {
+        if (strtotime(date("d-m-y"))  >= $scadenza_carta_credito ) {
             $this->cartavalida = false;
         } else {
             $this->cartavalida = true;
